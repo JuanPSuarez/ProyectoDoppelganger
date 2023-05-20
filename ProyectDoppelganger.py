@@ -7,6 +7,7 @@ greetings = ["Hola", "Hola que tal"]
 regards = ["Chau", "Nos Vemos", "Abrazo"]
 formal_greetings = ["Estimados","Buenas","Buenas tardes"]
 formal_regards = ["Saludos cordiales", "Saludos"]
+names = []
 
 # Initialize the sentiment analyzer
 sia = SentimentIntensityAnalyzer()
@@ -29,6 +30,26 @@ def has_regard(text):
         if regard.lower() in text.lower():
             return True
     return False
+# Funcion para reconocer dispositivos
+def device(devices):
+    for device in devices:
+        if device.lower() in devices.lower():
+            return True
+    return False
+#Funcion para reconocer ip
+def _ip(ips):
+    for ip in ips:
+        if ip.lower() in ips.lower():
+            return True
+    return False
+#Funcion para reconocer nombres
+def _name(names):
+    for name in names:
+        if name.lower() in names.lower():
+            return True
+        else:
+            names.append(name)
+            return False
 
 # Function to check if a formal greeting is present in the text
 def has_formal_greeting(text):
